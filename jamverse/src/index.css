@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-scale: 1;
+  --motion: 1;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #FDFBF7;
+  color: #1A1533;
+  font-size: calc(16px * var(--text-scale));
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Poppins', sans-serif;
+}
+
+.high-contrast body,
+body.high-contrast {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+}
+body.high-contrast .bg-lavender,
+body.high-contrast .bg-skyfog,
+body.high-contrast .bg-blush { background: #FFFFFF !important; }
+body.high-contrast * { border-color: #000000 !important; }
+
+body.reduce-motion * {
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+}
+
+* { scrollbar-width: thin; }
+
+.chunky-card {
+  border: 3px solid #1A1533;
+  border-radius: 1.5rem;
+  box-shadow: 4px 4px 0px 0px rgba(26,21,51,1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.chunky-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px rgba(26,21,51,1);
+}
+
+.btn-press:active { transform: scale(0.96); }
+
+.focus-ring:focus-visible {
+  outline: 3px solid #4A3AFF;
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #C9C3F5; border-radius: 8px; }
